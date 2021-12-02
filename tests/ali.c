@@ -1,34 +1,69 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
+char *get_line()
+{
+	ssize_t bytes_read;
+	size_t size = 10;
+	char *comm_line;
 
-#include <sys/types.h>
-#include <sys/wait.h>
+	printf ("$ ");
+/* These 2 lines are very important. */
+	comm_line = (char *) malloc (size);
+	bytes_read = getline (&comm_line, &size, stdin);
+	if (bytes_read == -1)
+	{
+		return NULL;
+	}
+	else
+	{
+		return (comm_line);
+	}
+}
 
-int main(void) {
-        pid_t pid;
-        int   status;
+char **str_tok(char *comm_line)
+{
 
-        pid = fork();
-        if (pid > 0) {
-                printf("I am the child.\n");
-                execl("/bin/ls", "ls", "-l", "/usr/", (char *) 0);
-                perror("In exec(): ");
-        }
-        if (pid == 0) {
-                printf("I am the parent, and the child is %d.\n", pid);
-                pid = wait(&status);
-                printf("End of process %d: ", pid);
-                if (WIFEXITED(status)) {
-                        printf("The process ended with exit(%d).\n", WEXITSTATUS(status));
-                }
-                if (WIFSIGNALED(status)) {
-                        printf("The process ended with kill -%d.\n", WTERMSIG(status));
-                }
-        }
-        if (pid < 0) {
-                perror("In fork():");
-        }
+    // La chaine de caractères à traiter.
+	const char *separators = " ";
 
-        exit(0);
+    // On cherche à récupérer, un à un, tous les mots (token) de la phrase
+    // et on commence par le premier.
+	char *strToken = strtok (comm_line, separators);
+	return (strToken);
+}
+
+void execv(char *comm_line)
+{
+	char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
+
+	printf("Before execve\n");
+	if (execve(argv[0], argv, NULL) == -1)
+	{
+		perror("Error:");
+	}
+	printf("After execve\n");
+}
+pid_t *fork_child()
+{
+	pid_t my_pid;
+	pid_t child_pid;
+
+	child_pid = fork();
+	if (child_pid == -1)
+	{
+		perror("Error:");
+		exit (1);
+	}
+	my_pid = getpid();
+	printf("My pid is %u\n", my_pid);
+	if (child_pid == 0)
+	{
+		printf("(%u) Nooooooooo!\n", my_pid);
+	}
+	else
+	{
+		printf("(%u) %u, I am your father\n", my_pid, child_pid);
+	}
+	return (*child_pid);
 }
