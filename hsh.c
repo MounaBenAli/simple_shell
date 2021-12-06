@@ -4,7 +4,7 @@
 int main()
 {
 	char *buffer = NULL;
-	size_t buffsize = 10;
+	ssize_t buffsize = 10;
 	int buff_bytes_r;
 	char *args[] = {buffer, NULL};
 
@@ -16,7 +16,6 @@ int main()
 	}
 	printf("#cisfun$ ");
 	buff_bytes_r = getline(&buffer,&buffsize,stdin);
-	args[0] = buffer;
 	if (buff_bytes_r == -1)
 		puts("ERROR");
 	else
