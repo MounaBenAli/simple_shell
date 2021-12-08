@@ -31,13 +31,18 @@ do
 	continue;
 	}
 	tokarray = str_tok(cmd," ");
+	if(strcmp(cmd, "env\n") == 0)
+        {
+		print_env();
+		free(tokarray);
+                free(cmd);
+                continue;
+        }
 	if(stat(tokarray[0], &st) != 0)
 	{
 	tokarray[0] = path(tokarray[0]);
 	}
 	execute(tokarray);
-	if (strcmp(cmd, "env\n") == 0)
-		print_env();
 	free(cmd);
 
 }while(1);

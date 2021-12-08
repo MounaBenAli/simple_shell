@@ -11,7 +11,8 @@ char *read_cmd(void)
 	size_t buffsize;
 
 	getline(&cmd, &buffsize, stdin);
-	if (strcmp(cmd, "exit\n") != 0)
+	if (strcmp(cmd, "exit\n") != 0 && strcmp(cmd, "env\n") != 0)
 		cmd[strlen(cmd) - 1] = '\0';
+
 	return (cmd);
 }
