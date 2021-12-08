@@ -18,9 +18,9 @@ void execute(char **arrtok)
 		free(arrtok);
 		exit(3);
 	}
-	else if(pid > 0)
+	else if (pid > 0)
 		wait(NULL);
-	else if(pid == 0)
+	else if (pid == 0)
 	{
 /*		if (strcmp(arrtok[0], "env") == 0)
 		{
