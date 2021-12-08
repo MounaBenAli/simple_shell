@@ -1,5 +1,5 @@
+#include "shell.h"
 
-#include"shell.h"
 /**
  * Searches the PATH for the matching command line
  */
@@ -12,41 +12,41 @@ char *path(char *toka)
 
 	while (environ[x] != NULL)
 	{
-	envi = strdup(environ[x]);
-	str = strtok(envi, "=");
-     	if (strcmp(envi, "PATH") == 0)
-	{
-	str = strtok(NULL, "=");
-      	break;
-        }
-     	x++;
+		envi = strdup(environ[x]);
+		str = strtok(envi, "=");
+		if (strcmp(envi, "PATH") == 0)
+		{
+			str = strtok(NULL, "=");
+			break;
+		}
+		x++;
 	}
 	path = str;
 	str = strtok(path, ":");
 	while (str)
 	{
-	tok[y] = str;
-	str = strtok(NULL, ":");
-	y++;
+		tok[y] = str;
+		str = strtok(NULL, ":");
+		y++;
 	}
-	tok[y] = NULL;
+		tok[y] = NULL;
+		y = 0;
+	while (tok[y])
+	{
+		y++;
+	}
 	y = 0;
-	while(tok[y])
+	while (tok[y])
 	{
-	y++;	
+		strcpy(ch, tok[y]);
+		strcat(ch, "/");
+		strcat(ch, toka);
+		if (stat(ch, &st) == 0)
+		{
+			toka = ch;
+			return (toka);
+		}
+		y++;
 	}
-	y = 0;
-	while(tok[y])
-	{
-	strcpy(ch, tok[y]);
-	strcat(ch, "/");
-	strcat(ch, toka);
-	if (stat(ch, &st) == 0)
-	{
-	toka = ch;
-	return (toka);
-	}
-	y++;
-	}
-return(NULL);
+	return (NULL);
 }

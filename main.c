@@ -38,6 +38,7 @@ do
                 free(cmd);
                 continue;
         }
+
 	if(stat(tokarray[0], &st) != 0)
 	{
 	tokarray[0] = path(tokarray[0]);

@@ -22,12 +22,13 @@ void execute(char **arrtok)
 		wait(NULL);
 	else if(pid == 0)
 	{
-		if (strcmp(arrtok[0], "env") == 0)
+/*		if (strcmp(arrtok[0], "env") == 0)
 		{
 			print_env();
 			free(arrtok);
 			exit(0);
 		}
+*/
 		res = execve(arrtok[0], arrtok, NULL);
 		if (res == -1)
 		{
