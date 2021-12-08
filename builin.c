@@ -5,8 +5,6 @@ int (*get_builtin(char **arguments))(char **)
 	builtin command[] = {
 		{"cd", _cd},
 		{"help", _help},
-		{"exit", __exit},
-		{"env", _env},
 		{NULL, NULL}};
 	int i = 0;
 
@@ -32,17 +30,7 @@ int _help()
         "\n>pipe handling"
         "\n>improper space handling");
 
-    return (0);
-}
-int __exit()
-{
-	exit (3);
-}
-
-int _env()
-{
-	print_env();
-	return (0);
+    return (NULL);
 }
 
 void sigintHandler(__attribute__ ((unused))int sig_num)
