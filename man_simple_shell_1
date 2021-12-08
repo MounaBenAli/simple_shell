@@ -34,7 +34,14 @@ When executing interactively, the simpl_shell displays the prompt \"($) "\ when 
 .B simple_shell
 Command options will be typed after the main command followed by a space and a
  '-' symbol.
-
+.BASIC SHELL FEATURES
+0-Prints a prompt in an infinite loop and waits for input string
+1-Passes the input string into a temporary buffer
+2-Tokenizes the buffered input string into tokens and parses them as the command line arguments
+3-Searches for a match to the token in the executable programs names down the PATH
+4-If a match to the command (aka program name) is found, the original or parent program found will be duplicated and child process must be created with system calls like fork(), wait() and exec().
+5-Print the Environment
+6-If the exit command is entered by user the shell will Exit
 .SH EXAMPLE
 
 ./hsh [command] [options]
