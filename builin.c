@@ -30,7 +30,7 @@ int _help()
         "\n>pipe handling"
         "\n>improper space handling");
 
-	return (NULL);
+	return (0);
 }
 
 void sigintHandler(__attribute__ ((unused))int sig_num)

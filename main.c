@@ -7,7 +7,7 @@
 
 int main(__attribute__ ((unused))int argc, __attribute__ ((unused))char **argv, __attribute__ ((unused))char **env)
 {
-	int f;
+	int (*f)(char **);
 	char *cmd;
 	char **tokarray = NULL;
 	struct stat st;
@@ -34,7 +34,12 @@ do
                 free(cmd);
                 continue;
         }
-*/
+	if(strcmp(cmd, "exit\n") == 0)
+        {
+                free(tokarray);
+                free(cmd);
+                break;
+        }
 	f = get_builtin(tokarray);
 	if (f != NULL)
 		continue;
