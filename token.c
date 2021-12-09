@@ -3,10 +3,10 @@
 
 
 /**
- * str_tok : splits a string into tokens
+ * str_tok - splits a string into tokens
  * @comm_line : string from stdin
  * @sep: delimiter of tokens in the parsed string
- * Return : an array of tokens for each word of the string.
+ * Return: an array of tokens for each word of the string.
  */
 char **str_tok(char *comm_line, char *sep)
 {
