@@ -3,8 +3,6 @@
  * main - this is our custom UNIX command line interpreter
  *Return: 0 on success
  */
-
-
 int main(void)
 {
 	char *cmd;
@@ -17,19 +15,17 @@ int main(void)
 		cmd = read_cmd();
 		if (!cmd)
 			exit(EXIT_SUCCESS);
+		if (strcmp(cmd, "exit\n") == 0 || feof(stdin))
+		{	free(cmd);
+			break;	}
 		if (cmd[0] == '\0' || strcmp(cmd, "\n") == 0)
 		{	free(cmd);
 			continue;	}
-		tokarray = str_tok(cmd, " ");
 		if (strcmp(cmd, "env\n") == 0)
-		{		print_env();
-			free(tokarray);
+		{	print_env();
 			free(cmd);
 			continue;	}
-		if (strcmp(cmd, "exit\n") == 0)
-		{	free(tokarray);
-			free(cmd);
-			break;	}
+		tokarray = str_tok(cmd, " ");
 		if (stat(tokarray[0], &st) != 0)
 			tokarray[0] = path(tokarray[0]);
 		execute(tokarray);
