@@ -38,7 +38,7 @@ Please find down below the series of 5 tests you can try yourself :
 
 ## How does the shell work?:mag_right:
 
-Since the early days of Unix, the shell has been part of the user's interface with the operating system. 
+Since the early days of Unix, the shell has been part of the user's interface with the operating system.
 The first Unix shell (the Thompson shell) had very limited features, mainly I/O redirection and command pipelines. Later shells expanded on that early shell and added more and more capabilities, which gave us powerful features that include word expansion, history substitution, loops and conditional expressions, among many others.
 This model of the **Shell** acts as the user's interactive interface to the operating system.
 It is the layer of programmming that understands and executes the commands the user enters.
@@ -48,10 +48,10 @@ As the outer layer of the operating system, the **Shell** can be contrasted with
 0. Prints a prompt in an infinite loop and waits for input string
 1. Passes the input string into a temporary buffer
 2. Tokenizes the buffered input string into tokens and parses them as the command line arguments
-3. Searches for the similar token in the down the PATH 
+3. Searches for the similar token in the down the PATH
 4. If a match to the command (aka program name) is found, the original or parent program found will be duplicated and child process must be created to execute with system calls like fork(), wait() and exec().
-5. Prints the Environment 
-6. If the exit command is entered by user the shell will Exit 
+5. Prints the Environment
+6. If the exit command is entered by user the shell will Exit
 
 ## List of allowed functions and system calls:hammer_and_wrench:
 

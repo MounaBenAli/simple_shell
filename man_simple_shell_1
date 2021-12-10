@@ -2,7 +2,7 @@
  "1.0" "C - simple_shell_1 - man page"
 
 .SH NAME
-.B simple_shell \- simple UNIX command interpreter made in C 
+.B simple_shell \- simple UNIX command interpreter made in C
 
 .SH SYNOPSIS
 .PP
@@ -20,7 +20,7 @@ Always returns the status of the previously executed command ( 0 if no command w
 
 Looks in PATH env variable for executable program file location.
 
-.SH 
+.SH
 
 .B Invocation
 .in +2n
