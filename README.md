@@ -37,6 +37,7 @@ Please find down below the series of 5 tests you can try yourself :
 ![Testing](tests.PNG)
 
 ## How does the shell work?:mag_right:
+
 Since the early days of Unix, the shell has been part of the user's interface with the operating system. 
 The first Unix shell (the Thompson shell) had very limited features, mainly I/O redirection and command pipelines. Later shells expanded on that early shell and added more and more capabilities, which gave us powerful features that include word expansion, history substitution, loops and conditional expressions, among many others.
 This model of the **Shell** acts as the user's interactive interface to the operating system.
@@ -53,6 +54,7 @@ As the outer layer of the operating system, the **Shell** can be contrasted with
 6. If the exit command is entered by user the shell will Exit 
 
 ## List of allowed functions and system calls:hammer_and_wrench:
+
  - access (man 2 access)
  - chdir (man 2 chdir)
  - close (man 2 close)
