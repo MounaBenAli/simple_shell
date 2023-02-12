@@ -96,6 +96,8 @@ Mouna is an aspiring full-stack developer and future software engineer with a fo
 
 [Click here for Mouna's Twitter](https://twitter.com/MunaBenAli)
 
+### Mohamed Anwer Hassine
 [Mohamed Anwer Hassine](https://github.com/HassineMohamedAnwer)
 
+### Med Aziz Dali
 [Med Aziz Dali](https://github.com/Azizo1212)
