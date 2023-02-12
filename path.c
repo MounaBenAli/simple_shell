@@ -8,34 +8,30 @@
 
 char *path(char *toka)
 {
-	int x = 0, y = 0, z = 0, w = 0;
-	char *tok[100], *str, *path, ch[100], *envi;
+	char *path = getenv("PATH");
+	const char sep = ':';
+	char *tok[100], ch[100];
 	struct stat st;
 
-	while (environ[x] != NULL)
-	{envi = strdup(environ[x]);
-		str = strtok(envi, "=");
-		if (strcmp(envi, "PATH") == 0)
-		{str = strtok(NULL, "=");
-			break; }
-		x++; }
-	path = str;
-	str = strtok(path, ":");
+	if (!path)
+		return (NULL);
+
+	char *str = strtok(path, &sep);
+	int y = 0;
 	while (str)
-	{tok[y] = str;
-		str = strtok(NULL, ":");
-		y++; }
-		tok[y] = NULL;
-	while (tok[z])
-		z++;
-	while (tok[w])
 	{
-		strcpy(ch, tok[w]);
-		strcat(ch, "/");
-		strcat(ch, toka);
+		tok[y++] = str;
+		str = strtok(NULL, &sep);
+	}
+	tok[y] = NULL;
+
+	for (int w = 0; tok[w]; w++)
+	{
+		snprintf(ch, sizeof(ch), "%s/%s", tok[w], toka);
 		if (stat(ch, &st) == 0)
-		{toka = ch;
-			return (toka); }
-		w++; }
+		{
+			return strdup(ch);
+		}
+	}
 	return (NULL);
 }
