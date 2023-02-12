@@ -13,11 +13,13 @@ char *path(char *toka)
 	char *tok[100], ch[100];
 	struct stat st;
 
+
 	if (!path)
 		return (NULL);
 
 	char *str = strtok(path, &sep);
 	int y = 0;
+
 	while (str)
 	{
 		tok[y++] = str;
@@ -30,7 +32,7 @@ char *path(char *toka)
 		snprintf(ch, sizeof(ch), "%s/%s", tok[w], toka);
 		if (stat(ch, &st) == 0)
 		{
-			return strdup(ch);
+			return (strdup(ch));
 		}
 	}
 	return (NULL);
