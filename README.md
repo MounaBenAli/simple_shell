@@ -91,7 +91,9 @@ Unkown
 ## Collaborators :muscle::brain::sunglasses:
 ### Mouna Ben Ali
 Mouna is an aspiring full-stack developer and future software engineer with a focus on Web Development & Devops. For the simple shell project, she focused on developing the tokenization and the $PATH where one of the main challenges is ensuring that the path is correctly configured and points to the intended directory or file.If the path is not configured correctly, this can lead to errors and make it difficult to execute commands.
+
 [Click here for Mouna's LinkedIn](https://www.linkedin.com/in/mouna-ben-ali-643bb865/)
+
 [Click here for Mouna's Twitter](https://twitter.com/MunaBenAli)
 
 [Mohamed Anwer Hassine](https://github.com/HassineMohamedAnwer)
