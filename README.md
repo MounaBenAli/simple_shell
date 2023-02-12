@@ -4,6 +4,7 @@
 
 ## Table of contents :scroll:
  - **About this project**
+ - **The Blog**
  - **Usage**
  - **Compiler**
  - **Testing**
@@ -17,6 +18,9 @@
 This project was created for study and learning purposes for Holberton School :tunisia:. To create our custom Command Line Interpreter or (CLI).
 It is a **simple UNIX Command Line Interpreter** developed in the [C Programming Language](https://en.wikipedia.org/wiki/C_(programming_language)) and based on the first ever Unix Shell : The [Thompson Shell](https://en.wikipedia.org/wiki/Thompson_shell) introduced in the first version of Unix in 1971, and was written by **Ken Thompson**.
 It is not used anymore and was replaced by The [Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell) in 1979.
+
+## The Blog :black_nib:
+[Click here for our Blog](https://medium.com/@3801/lets-build-a-shell-197394e8ff1c)
 
 ## Usage :wrench:
 
@@ -85,6 +89,11 @@ As the outer layer of the operating system, the **Shell** can be contrasted with
 Unkown
 
 ## Collaborators :muscle::brain::sunglasses:
-[Mouna Ben Ali](https://github.com/MounaBenAli)
+### Mouna Ben Ali
+Mouna is an aspiring full-stack developer and future software engineer with a focus on Web Development & Devops. For the simple shell project, she focused on developing the tokenization and the $PATH where one of the main challenges is ensuring that the path is correctly configured and points to the intended directory or file.If the path is not configured correctly, this can lead to errors and make it difficult to execute commands.
+[Click here for Mouna's LinkedIn](https://www.linkedin.com/in/mouna-ben-ali-643bb865/)
+[Click here for Mouna's Twitter](https://twitter.com/MunaBenAli)
+
 [Mohamed Anwer Hassine](https://github.com/HassineMohamedAnwer)
+
 [Med Aziz Dali](https://github.com/Azizo1212)
