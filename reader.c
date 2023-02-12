@@ -1,7 +1,13 @@
 #include"shell.h"
 /**
- * read_cmd - reads the input from stdin in 1024-byte chunks
- * Return: on success pointer to the user input
+ * read_cmd - reads input from stdin in 1024-byte chunks
+ *
+ * Description: This function reads input from stdin in 1024-byte chunks
+ * and returns a pointer to the user input.
+ * If the user input is "exit" or "env",the function
+ * removes the newline character at the end of the string.
+ *
+ * Return: On success, a pointer to the user input. On failure, NULL.
  */
 
 
