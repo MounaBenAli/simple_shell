@@ -32,7 +32,7 @@ Please clone the repository by copying this :
 
 Please compile by copying this :
 
-**gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh**
+```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 ## Testing :wrench:
 
